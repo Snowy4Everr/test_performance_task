@@ -28,25 +28,25 @@ options = {
         "You feel happier."
     ]
 }
-
+#this is a list in a dictionary, where the "keys" are the options, and the values are the steps taken in that option.
 def saturday_morning(category):
     if category in options and len(options[category]) > 0:
         for step in options[category]:
             input(step + " ")
-        options.pop(category)
+        options.pop(category) #this is the portion that removes the option once it has been chosen and completed.
     else:
         print("Invalid choice or no more options available for this category.")
-
+#this defines the function for the saturday morning experience. it will remove the instance of the option once it has been chosen and finished.
 def ask_continue():
     return input("Do you want to continue? (yes/no): ").lower() 
-
+#this function asks the user if they want to continue after each option. choosing yes loops back to the main function, choosing no takes them to the rating function.
 def rating():
     recommend = input("Would you recommend this experience to a friend? (yes/no): ").lower()
     if recommend == "yes":
         print("Thank you for your recommendation!")
     else:
         print("Thank you for your feedback!")
-
+#this function asks the user if they would recommend the experience to a friend. saying yes or no will give different responses.
 def main():
         start_experience = input("Do you want to go through the Saturday morning experience? (yes/no): ").lower()
 
@@ -71,3 +71,5 @@ def main():
         rating()
 
 main()
+#this is the main function that runs the saturday morning experience. it checks if they want to start the experience, loops through the options, and finally calls the rating function at the end. 
+# the rating function is called if the user says no to continue, or they have completed all the options.
